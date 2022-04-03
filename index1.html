@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+</head>
+<body>
+    <h3>Hello, this is a page</h3>
+</body>
+</html>
+
+<script>
+    function add7(num)
+    {
+        return num+7;
+    }
+    //Example of anonymous function
+    /*
+    For example, let's say you want to run some code when the user tupes into a text box. To do this, you can call the addEventListener() function of the text box. This function expects you to pass it (at least) two parameters:
+
+    -the name of the event to listen for, which in this case is 'keydown'
+    -a function to run when the event happens
+
+    When the user presses a key, the browser will call the function you provided, and will pass it a parameter containing information about this event, including the particular key that the user pressed:
+    */
+
+   /*function logKey(event){
+       console.log(`You pressed "${event.key}".`);
+   }
+
+   textBox.addEventListener('keydown', logKey);
+   //Instead of defining a separate logKey() function, you can pass an anonymous function into addEventListener():
+
+   textBox.addEventListener('keydown',function(event){
+       console.log(`You pressed "${event.key}".`);
+   });*/
+
+   //Arrow functions
+   let sum = (a, b) => a + b;
+   /* This arrow function is a shorter form of:
+
+    let sum = function(a, b) {
+    return a + b;
+};
+*/
+
+alert( sum(1, 2) ); // 3
+
+
+//Solving Fizz Buzz
+/*Write a program that takes a user’s input and prints the numbers from one to the number the user entered. However, for multiples of three print Fizz instead of the number and for the multiples of five print Buzz. For numbers which are multiples of both three and five print FizzBuzz.*/
+
+//Allows user to enter a number-print each number between one and the number entered.
+//For numbers that divide by three without remainder print Fizz instead. For numbers ///that divide 5 without a remainder print Buzz and for numbers that divide both 3 and //5 print FizzBuzz
+
+let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "));
+
+for (let i = 1; i <= answer; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
+
+//Errors in Javascript
+/*
+a TypeError may be thrown when:
+
+an operand or argument passed to a function is incompatible with the type expected by that operator or function;
+or when attempting to modify a value that cannot be changed;
+or when attempting to use a value in an inappropriate way.
+*/
+
+
+</script>
