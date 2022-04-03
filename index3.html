@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- method 1
+        the solution is less than ideal because we're cluttering our html with js -->
+    <button onclick="alert('Hello World')">Click Me</button>
+
+    <!-- method 2 -->
+    <button id="btn">Click Me 2</button>
+
+    <!-- method 3 -->
+    <button id ="btn3">Click Me 3</button>
+</body>
+
+<script>
+    //Events are actions that occur on your webpage such as mouse clicks or keypresses, using js we can make out webpage listen and react to these events
+
+    // There are three primary ways to go about this: you can attach functions’ attributes directly on your HTML elements, you can set the “on_event_” property on the DOM object in your JavaScript, or you can attach event listeners to the nodes in your JavaScript. 
+    
+    //Exercise: Create 3 buttons that all alert "Hello World" when clicked. 
+
+    //Method 2
+    const btn = document.querySelector('#btn');
+    btn.onclick = () => alert('Hello World 2');
+
+    //Method 3
+    // Now, we maintain separation of concerns, and we also allow multiple event listeners if the need arises. Method 3 is much more flexible and powerful, though it is a bit more complex to set up.
+    const btn3 = document.querySelector('#btn3');
+    btn3.addEventListener('click', () => {
+        alert('Hello World 3');
+    })
+
+    btn.addEventListener('click', function (e) {
+  console.log(e);
+    });
+
+    // The e in that function is an object that references the event itself. Within that object you have access to many useful properties and functions such as which mouse button or key was pressed, or information about the event’s target - the DOM node that was clicked.
+    btn.addEventListener('click', function (e) {
+  console.log(e.target);
+});
+    btn.addEventListener('click', function (e) {
+    e.target.style.background = 'blue';
+});
+
+// <div id="container">
+//     <button id="1">Click Me</button>
+//     <button id="2">Click Me</button>
+//     <button id="3">Click Me</button>
+// </div>
+// // buttons is a node list. It looks and acts much like an array.
+// const buttons = document.querySelectorAll('button');
+
+// // we use the .forEach method to iterate through each button
+// buttons.forEach((button) => {
+
+//   // and for each one we add a 'click' listener
+//   button.addEventListener('click', () => {
+//     alert(button.id);
+//   });
+// });
+// This is just the tip of the iceberg when it comes to DOM manipulation and event handling, but it’s enough to get you started with some exercises. In our examples so far we have been using the ‘click’ event exclusively, but there are many more available to you.
+
+// Some useful events include:
+
+// click
+// dblclick
+// keydown
+// keyup
+
+</script>
+
+
+</html>
